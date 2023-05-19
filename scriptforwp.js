@@ -44,5 +44,5 @@ function takeScreenshotAndSendToWhatsApp(message) {
 
 // Call the function with your desired message
 
-takeScreenshotAndSendToWhatsApp('Thankyou😊😊);
+takeScreenshotAndSendToWhatsApp('Thankyou😊😊');
 
