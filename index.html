@@ -52,7 +52,7 @@
   <div class="container">
     <h1>Happy Birthday!</h1>
     <p>
-      Hello Dear,
+      Dear &nbsp; &nbsp;<span id="receiverName"></span>,
     </p>
     <p>
       Wishing you a day filled with joy,
@@ -72,7 +72,7 @@
     </p>
     <div class="signature">
       Best wishes,<br>
-      [Raajesh...]
+      <span id="senderName">[Raajesh...]</span>
     </div>
     <button class="replay-button" onclick="redirectToWhatsApp()">Thankyou..😊😊</button>
   </div>
@@ -85,6 +85,24 @@
       window.location.href = "https://wa.me/919931449755?text=Thankyou..😊😊"; // Replace with your WhatsApp number or link
 
     }
+
+  </script>
+  
+  <script>
+
+    // Extract URL parameters
+
+    const urlParams = new URLSearchParams(window.location.search);
+
+    const senderName = urlParams.get('sender');
+
+    const receiverName = urlParams.get('receiver');
+
+    // Set sender and receiver names
+
+    document.getElementById('senderName').textContent = senderName;
+
+    document.getElementById('receiverName').textContent = receiverName;
 
   </script>
 </body>
