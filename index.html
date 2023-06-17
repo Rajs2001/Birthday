@@ -57,6 +57,17 @@
       -webkit-background-clip: text;
       animation: animateText 10s infinite linear;
     }
+    .content-text {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 24px;
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 2s ease-in-out forwards, moveUp 2s ease-in-out 2s forwards;
+    }
+    .bounceanima{
+    animation: bounceAnimation 2s 2 linear
+    }
+    
     @keyframes animateText {
       0% {
         background-position: 0%;
@@ -65,12 +76,57 @@
         background-position: 200%;
       }
     }
+    
+    @keyframes bounceAnimation {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-20px);
+      }
+      60% {
+        transform: translateY(-10px);
+      }
+    }
+    @keyframes glassyPulse {
+
+  0% {
+
+    transform: scale(1);
+
+    opacity: 1;
+
+  }
+
+  50% {
+
+    transform: scale(1.05);
+
+    opacity: 0.8;
+
+  }
+
+  100% {
+
+    transform: scale(1);
+
+    opacity: 1;
+
+  }
+
+}
+
+.glassyPulse {
+
+  animation: glassyPulse 2s infinite;
+
+}
   </style>
 </head>
 <body>
   <div class="container">
     <h1 class="birthday-text">Happy Birthday!</h1>
-    <p>
+    <p class="glassyPulse">
       Dear &nbsp; &nbsp;<span id="receiverName"></span>,
     </p>
     <p>
@@ -93,7 +149,7 @@
       Best wishes,<br>
       <span id="senderName">[Raajesh...]</span>
     </div>
-    <button class="replay-button" onclick="redirectToWhatsApp()">Thankyou..😊😊</button>
+    <button class="replay-button bounceanima" onclick="redirectToWhatsApp()">Thankyou..😊😊</button>
   </div>
   
   
